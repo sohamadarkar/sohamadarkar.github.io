@@ -1,0 +1,2351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soham Adarkar | Angular & .NET Expert | Software Developer Portfolio</title>
+    <meta name="description"
+        content="5+ years experience building financial web applications with Angular & .NET. Expert in cloud technologies, data governance, and high-performance systems.">
+    <meta name="keywords"
+        content="Angular developer, .NET expert, software engineer portfolio, financial web applications, cloud developer, Toronto developer">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #ffffff;
+            --text-color: #1e293b;
+            --light-text: #64748b;
+            --accent-color: #3b82f6;
+            --card-bg: #f8fafc;
+            --error-color: #ef4444;
+            --success-color: #10b981;
+            --code-bg: #1e293b;
+            --code-text: #f8fafc;
+            --bg-color: #ffffff;
+            --header-bg: rgba(255, 255, 255, 0.98);
+            --footer-bg: #f8fafc;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --nav-text: #1e293b;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #3b82f6;
+            --secondary-color: #1e293b;
+            --text-color: #f8fafc;
+            --light-text: #94a3b8;
+            --accent-color: #60a5fa;
+            --card-bg: #1e293b;
+            --code-bg: #0f172a;
+            --code-text: #e2e8f0;
+            --bg-color: #0f172a;
+            --header-bg: rgba(15, 23, 42, 0.98);
+            --footer-bg: #1e293b;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+            --nav-text: #f8fafc;
+            --glass-bg: rgba(15, 23, 42, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            background-color: var(--bg-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Smooth scroll effect */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--card-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-color);
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-color: var(--bg-color);
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        section.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            position: relative;
+            margin-bottom: 40px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            position: relative;
+            width: 300px;
+            height: 1px;
+            margin-left: 20px;
+            background-color: var(--light-text);
+            opacity: 0.3;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 12px rgba(59, 130, 246, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+            }
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: var(--primary-color)
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            20%,
+            60% {
+                transform: translateX(-5px);
+            }
+
+            40%,
+            80% {
+                transform: translateX(5px);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            80% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 100;
+            box-shadow: 0 2px 10px var(--shadow-color);
+            animation: slideInDown 0.5s ease-out;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 15px 40px;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--nav-text);
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        nav a:hover::before {
+            visibility: visible;
+            width: 100%;
+        }
+
+        nav a.active::before {
+            visibility: visible;
+            width: 100%;
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            background: transparent;
+            border: none;
+            color: var(--nav-text);
+            cursor: pointer;
+            font-size: 1.2rem;
+            margin-left: 20px;
+            transition: transform 0.3s ease;
+            padding: 5px;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(30deg) scale(1.1);
+            background-color: rgba(59, 130, 246, 0.1);
+        }
+
+        /* Combined Hero + About Section */
+        .hero-about-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 120px 20px 60px;
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: left;
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+
+        .hero-content .intro {
+            color: var(--primary-color);
+            font-family: 'Source Code Pro', monospace;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: var(--text-color);
+            line-height: 1.1;
+        }
+
+        .hero-content h2 {
+            font-size: clamp(1.5rem, 6vw, 2.5rem);
+            color: var(--light-text);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero-content p {
+            max-width: 600px;
+            margin-bottom: 20px;
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
+            color: var(--light-text);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: flex-start;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--card-bg);
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px var(--shadow-color);
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px) scale(1.1);
+            color: var(--secondary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            box-shadow: 0 8px 18px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Download Resume Button */
+        .resume-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            background: transparent;
+            color: var(--primary-color);
+            border-radius: 5px;
+            font-weight: 500;
+            margin-top: 15px;
+            border: 1px solid var(--primary-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .resume-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
+
+        .resume-btn:hover {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+            text-decoration: none;
+        }
+
+        .resume-btn:hover::before {
+            width: 100%;
+        }
+
+        .resume-btn i {
+            margin-right: 8px;
+        }
+
+        /* About Section (now part of hero) */
+        .about-content {
+            max-width: 800px;
+            margin: 50px auto 0;
+            padding: 25px;
+            background-color: var(--glass-bg);
+            border-radius: 12px;
+            box-shadow: 0 8px 20px var(--shadow-color);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+        }
+
+        .about-text p {
+            margin-bottom: 12px;
+            line-height: 1.6;
+            color: var(--light-text);
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+
+        .certifications {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px var(--shadow-color);
+            transition: all 0.3s ease;
+        }
+
+        .certifications:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px var(--shadow-color);
+        }
+
+        .certifications h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .certifications ul {
+            margin-top: 8px;
+            list-style: none;
+        }
+
+        .certifications li {
+            margin-bottom: 6px;
+            position: relative;
+            padding-left: 22px;
+            line-height: 1.5;
+            font-size: clamp(0.8rem, 3vw, 0.9rem);
+        }
+
+        .certifications li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 1rem;
+        }
+
+        /* Experience Styles */
+        .experience-container {
+            position: relative;
+        }
+
+        .experience-item {
+            margin-bottom: 40px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+        }
+
+        .experience-item::after {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 3px solid var(--secondary-color);
+            box-shadow: 0 0 0 3px var(--primary-color);
+        }
+
+        .experience-header {
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .experience-header h3 {
+            font-size: clamp(1.1rem, 4vw, 1.3rem);
+            margin-bottom: 5px;
+        }
+
+        .experience-header h3 span {
+            color: var(--primary-color);
+        }
+
+        .period-location {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            color: var(--light-text);
+            font-style: italic;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .projects-container {
+            display: grid;
+            gap: 20px;
+        }
+
+        .project {
+            background-color: var(--card-bg);
+            padding: 18px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px var(--shadow-color);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project h4 {
+            font-size: clamp(1rem, 4vw, 1.2rem);
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .project-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .project.active .project-arrow {
+            transform: rotate(90deg);
+        }
+
+        .technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 10px 0;
+            position: relative;
+        }
+
+        .technologies span {
+            background-color: rgba(37, 99, 235, 0.1);
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .project:hover .technologies span {
+            background-color: rgba(37, 99, 235, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .achievements {
+            margin-left: 18px;
+            position: relative;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .project.active .achievements {
+            max-height: 1000px;
+            opacity: 1;
+            margin-top: 12px;
+        }
+
+        .achievements li {
+            margin-bottom: 8px;
+            position: relative;
+            color: var(--light-text);
+            line-height: 1.5;
+            transition: all 0.3s ease;
+            font-size: clamp(0.85rem, 3vw, 0.95rem);
+        }
+
+        .project:hover .achievements li {
+            color: var(--text-color);
+        }
+
+        .achievements li::before {
+            content: "▹";
+            position: absolute;
+            left: -18px;
+            color: var(--primary-color);
+            font-size: 1rem;
+        }
+
+        /* Skills Styles */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .skills-category {
+            background-color: var(--card-bg);
+            padding: 18px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px var(--shadow-color);
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+                linear-gradient(135deg, var(--primary-color), var(--accent-color)) border-box;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skills-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(59, 130, 246, 0.05));
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .skills-category:hover::before {
+            opacity: 1;
+        }
+
+        .skills-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px var(--shadow-color);
+        }
+
+        .skills-category h3 {
+            font-size: clamp(1rem, 4vw, 1.2rem);
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            position: relative;
+            padding-bottom: 6px;
+            z-index: 1;
+        }
+
+        .skills-category h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+
+        .skills-category ul {
+            list-style: none;
+            columns: 1;
+            column-gap: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .skills-category li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 22px;
+            break-inside: avoid;
+            transition: all 0.3s ease;
+            font-size: clamp(0.85rem, 3vw, 0.95rem);
+        }
+
+        .skills-category:hover li {
+            transform: translateX(5px);
+        }
+
+        .skills-category li::before {
+            content: "•";
+            position: absolute;
+            left: 10px;
+            color: var(--primary-color);
+            font-size: 1rem;
+        }
+
+        /* Education Styles */
+        .education-container {
+            display: grid;
+            gap: 15px;
+        }
+
+        .education-item {
+            background-color: var(--card-bg);
+            padding: 18px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px var(--shadow-color);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(59, 130, 246, 0.05));
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .education-item:hover::before {
+            opacity: 1;
+        }
+
+        .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px var(--shadow-color);
+        }
+
+        .education-item h3 {
+            font-size: clamp(1rem, 4vw, 1.2rem);
+            color: var(--primary-color);
+            margin-bottom: 6px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .degree {
+            font-weight: 600;
+            margin: 5px 0;
+            color: var(--text-color);
+            position: relative;
+            z-index: 1;
+            font-size: clamp(0.85rem, 3vw, 0.95rem);
+        }
+
+        .education-period {
+            color: var(--light-text);
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+            font-size: clamp(0.8rem, 3vw, 0.9rem);
+        }
+
+        /* Enhanced Contact Form Styles */
+        #contact {
+            position: relative;
+        }
+
+        #contact p {
+            max-width: 700px;
+            margin: 0 auto 25px;
+            text-align: center;
+            color: var(--light-text);
+            line-height: 1.6;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px var(--shadow-color);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+        }
+
+        form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+
+        form::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, rgba(37, 99, 235, 0.05), rgba(59, 130, 246, 0.03));
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .form-group {
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .form-group.focused label {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--bg-color);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 8px;
+            color: var(--text-color);
+            font-family: inherit;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px var(--shadow-color);
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 600;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            margin-top: 8px;
+        }
+
+        button:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(37, 99, 235, 0.4);
+        }
+
+        button:active:not(:disabled) {
+            transform: translateY(1px);
+        }
+
+        button:disabled {
+            background: #e2e8f0;
+            color: #94a3b8;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+
+        button:focus:not(:active)::after {
+            animation: pulse 1s ease-out;
+        }
+
+        .error-message {
+            color: var(--error-color);
+            font-size: 0.75rem;
+            margin-top: 5px;
+            display: none;
+            animation: slideUp 0.3s ease-out;
+        }
+
+        .form-group.invalid .error-message {
+            display: block;
+        }
+
+        .form-group.invalid input,
+        .form-group.invalid textarea {
+            border-color: var(--error-color);
+            animation: shake 0.4s ease-in-out;
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 25px;
+            background-color: #d1fae5;
+            color: #065f46;
+            border-radius: 12px;
+            margin-top: 25px;
+            box-shadow: 0 8px 15px var(--shadow-color);
+            animation: popIn 0.5s ease-out;
+            border-left: 4px solid #10b981;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-message h3 {
+            color: #065f46;
+            margin-bottom: 12px;
+            font-size: clamp(1rem, 4vw, 1.2rem);
+        }
+
+        .success-message p {
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            margin-bottom: 0;
+        }
+
+        /* Resume Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            animation: popIn 0.3s ease-out;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--light-text);
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--primary-color);
+        }
+
+        .modal h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .modal p {
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: var(--footer-bg);
+            margin-top: 40px;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+
+        footer .social-links {
+            justify-content: center;
+            margin-bottom: 25px;
+            gap: 15px;
+        }
+
+        footer p {
+            color: var(--light-text);
+            font-size: clamp(0.8rem, 3vw, 0.9rem);
+            margin-bottom: 6px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 12px var(--shadow-color);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 15px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Scroll Progress Indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            z-index: 101;
+            transition: width 0.1s ease-out;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            section {
+                padding: 50px 20px;
+            }
+
+            h2::after {
+                width: 200px;
+            }
+
+            nav ul {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 40px 15px;
+            }
+
+            h2 {
+                margin-bottom: 30px;
+            }
+
+            h2::after {
+                width: 150px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            header {
+                padding: 15px 20px;
+            }
+
+            .hero-about-container {
+                padding: 100px 15px 40px;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .about-content {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 30px 15px;
+            }
+
+            h2::after {
+                width: 100px;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            .hero-about-container {
+                padding: 90px 10px 30px;
+            }
+
+            .about-content {
+                padding: 18px;
+            }
+
+            .modal-content {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h2::after {
+                width: 50px;
+            }
+
+            nav ul {
+                gap: 10px;
+            }
+
+            header {
+                padding: 10px 15px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div id="particles-js"></div>
+
+    <header id="header">
+        <nav>
+            <ul>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
+
+    <main>
+        <!-- Combined Hero + About Section -->
+        <section class="hero-about-container" id="about">
+            <div class="hero-content">
+                <p class="intro">Hi, my name is</p>
+                <h1>Soham Adarkar.</h1>
+                <h2>I build financial web applications.</h2>
+                <p>Experienced software developer with expertise of 5+ years in designing, developing and maintaining
+                    high-performance financial banking web applications. Proficient in Angular, .NET, C#, MVC, WinForms,
+                    SQL Server, Snowflake, TypeScript and REST APIs, with a strong focus on database management, data
+                    governance and cloud technologies.</p>
+                <div class="social-links">
+                    <a href="https://github.com/sohamadarkar" target="_blank" aria-label="GitHub"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/soham-adarkar/" target="_blank" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="https://sohamadarkar.github.io/" target="_blank" aria-label="Website"><i
+                            class="fas fa-globe"></i></a>
+                    <a href="https://www.cloudskillsboost.google/public_profiles/22ad6e34-debd-4a25-a4a2-f8c65fba5f3e"
+                        target="_blank" aria-label="Google Cloud Profile"><i class="fab fa-google"></i></a>
+                </div>
+                <button class="resume-btn" id="resumeBtn">
+                    <i class="fas fa-download"></i> Download Resume
+                </button>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Experienced software developer with expertise of 5+ years in designing, developing and
+                        maintaining high-performance financial banking web applications.</p>
+                    <p>Proficient in Angular, .NET, C#, SQL Server, Snowflake, TypeScript and REST APIs, with a strong
+                        focus on database management, data governance and cloud technologies.</p>
+                    <p>Adept at optimizing application performance, implementing secure web services, troubleshooting
+                        production issues under pressure and collaborating with cross-functional teams to deliver
+                        scalable solutions. Skilled in analysing and documenting finance, insurance and banking
+                        workflows to enhance operational efficiency.</p>
+
+                    <div class="certifications">
+                        <h3>Certifications & Profiles</h3>
+                        <ul>
+                            <li><a href="https://www.cloudskillsboost.google/public_profiles/22ad6e34-debd-4a25-a4a2-f8c65fba5f3e"
+                                    target="_blank">Google Cloud
+                                    Profile</a></li>
+                            <li><a href="https://certificates.dev/angular/certificates/504bbb37-0e20-4ea0-b09a-c5919f27de81"
+                                    target="_blank">Certified Angular
+                                    Developer</a></li>
+                            <li><strong>GitHub Portfolio Website:</strong> <a href="https://sohamadarkar.github.io/"
+                                    target="_blank">sohamadarkar.github.io</a></li>
+                            <li><strong>Location:</strong> Mississauga, Ontario</li>
+                            <li><strong>Phone:</strong> +1(437)974-4355</li>
+                            <li><strong>Email:</strong> so.adarkar24@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li>C#</li>
+                        <li>Angular</li>
+                        <li>React</li>
+                        <li>TypeScript</li>
+                        <li>PHP</li>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                        <li>jQuery</li>
+                        <li>Ajax</li>
+                    </ul>
+                </div>
+
+                <div class="skills-category">
+                    <h3>Frameworks & Technologies</h3>
+                    <ul>
+                        <li>.NET core</li>
+                        <li>Angular Core</li>
+                        <li>NgRx</li>
+                        <li>NodeJS</li>
+                        <li>WPF</li>
+                        <li>WCF</li>
+                        <li>NestJS</li>
+                        <li>Web-API</li>
+                        <li>Win-Forms</li>
+                        <li>Web-Forms</li>
+                        <li>MVC</li>
+                        <li>Entity Framework</li>
+                    </ul>
+                </div>
+
+                <div class="skills-category">
+                    <h3>Databases & Data Governance</h3>
+                    <ul>
+                        <li>Snowflake</li>
+                        <li>SQL Server</li>
+                        <li>MySQL</li>
+                        <li>Oracle</li>
+                        <li>Data Governance Tools</li>
+                        <li>ETL Tools</li>
+                        <li>Power BI</li>
+                        <li>SQL Developer</li>
+                    </ul>
+                </div>
+
+                <div class="skills-category">
+                    <h3>Cloud & DevOps</h3>
+                    <ul>
+                        <li>AWS</li>
+                        <li>Azure</li>
+                        <li>GCP</li>
+                        <li>Docker</li>
+                        <li>Kubernetes</li>
+                        <li>CI/CD</li>
+                        <li>Jenkins</li>
+                        <li>Azure DevOps</li>
+                        <li>Postman</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <div class="experience-container">
+                <!-- Timeless Medical Systems Canada -->
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3>Software Engineer <span>@ Timeless Medical Systems Canada</span></h3>
+                        <div class="period-location">
+                            <span>January 2022 – Present</span>
+                            <span>Canada - Medical Domain</span>
+                        </div>
+                    </div>
+
+                    <div class="projects-container">
+                        <div class="project">
+                            <div class="project-header">
+                                <h4>Inventory Management System</h4>
+                                <i class="fas fa-chevron-right project-arrow"></i>
+                            </div>
+                            <div class="technologies">
+                                <span>.NET</span>
+                                <span>Angular</span>
+                                <span>MVC</span>
+                                <span>WinForms</span>
+                                <span>TypeScript</span>
+                                <span>SQL Server</span>
+                                <span>RESTful APIs</span>
+                                <span>SignalR</span>
+                            </div>
+                            <ul class="achievements">
+                                <li>Designed Angular-based user interfaces along WinForms for inventory tracking &
+                                    improved usability</li>
+                                <li>Optimized SQL server queries and application architecture, improving data retrieval
+                                    speed by 40%</li>
+                                <li>Developed .NET 6-based REST APIs with SignalR for real-time inventory tracking and
+                                    synchronization</li>
+                                <li>Integrated Angular UI frontend enhancements with Angular Lazy Loading for
+                                    performance improvement</li>
+                                <li>Implemented responsive design and ensured compatibility across various devices with
+                                    MVC architecture</li>
+                            </ul>
+                        </div>
+
+                        <div class="project">
+                            <div class="project-header">
+                                <h4>Electronic Health Record (EHR) System</h4>
+                                <i class="fas fa-chevron-right project-arrow"></i>
+                            </div>
+                            <div class="technologies">
+                                <span>.NET</span>
+                                <span>Angular</span>
+                                <span>MySQL</span>
+                                <span>WPF</span>
+                                <span>WCF</span>
+                                <span>DAST</span>
+                                <span>SAST</span>
+                                <span>SOAP Services</span>
+                                <span>OAuth 2.0</span>
+                                <span>JWT</span>
+                            </div>
+                            <ul class="achievements">
+                                <li>Designed data governance mechanisms for secure handling of patient records in SQL
+                                    Server</li>
+                                <li>Developed role-based access control using OAuth 2.0 & DAST/SAST Authentication to
+                                    enhance security</li>
+                                <li>Built WPF frontend components to facilitate data visualization and analytics for
+                                    hospital administrators</li>
+                                <li>Conducted system performance analysis to refine database indexing and caching
+                                    strategies</li>
+                                <li>Integrated SOAP-based web services for secure and structured data exchange with MVC
+                                    backend</li>
+                            </ul>
+                        </div>
+
+                        <div class="project">
+                            <div class="project-header">
+                                <h4>Healthcare Data Analytics Dashboard</h4>
+                                <i class="fas fa-chevron-right project-arrow"></i>
+                            </div>
+                            <div class="technologies">
+                                <span>.NET</span>
+                                <span>Angular</span>
+                                <span>TypeScript</span>
+                                <span>SQL Server</span>
+                                <span>Power BI</span>
+                                <span>ETL Tools</span>
+                                <span>DevOps</span>
+                            </div>
+                            <ul class="achievements">
+                                <li>Created real-time analytics dashboards using Power BI, SQL Server, and Snowflake to
+                                    track hospital KPIs</li>
+                                <li>Designed SQL Server ETL pipelines with Azure Functions to process and analyse
+                                    patient data</li>
+                                <li>Integrated CI/CD pipelines using Azure DevOps and GitHub for automated testing and
+                                    deployments</li>
+                                <li>Developed frontend web application to automate healthcare insights generation
+                                    utilizing MVC architecture</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Developer Group (GDG), Toronto -->
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3>Software Developer <span>@ Google Developer Group (GDG), Toronto</span></h3>
+                        <div class="period-location">
+                            <span>January 2021 - December 2021</span>
+                            <span>Canada - Banking Domain</span>
+                        </div>
+                    </div>
+
+                    <div class="projects-container">
+                        <div class="project">
+                            <div class="project-header">
+                                <h4>Banking Transaction Monitoring System</h4>
+                                <i class="fas fa-chevron-right project-arrow"></i>
+                            </div>
+                            <div class="technologies">
+                                <span>Angular</span>
+                                <span>.NET core</span>
+                                <span>WinForms</span>
+                                <span>Data Governance Tools</span>
+                                <span>ETL</span>
+                                <span>Apache</span>
+                                <span>Power BI</span>
+                                <span>RESTful APIs</span>
+                            </div>
+                            <ul class="achievements">
+                                <li>Developed .NET Core & Angular banking transaction monitoring system to detect
+                                    fraudulent activities</li>
+                                <li>Designed real-time dashboards with Angular and Power BI to visualize financial
+                                    transaction patterns</li>
+                                <li>Integrated secure RESTful APIs for real-time data exchange between banks and
+                                    regulatory authorities</li>
+                                <li>Optimized SQL Server queries to enhance system performance and ensure quick data
+                                    retrieval</li>
+                                <li>Implemented data validation rules using Apache stream processing to ensure
+                                    compliance & regulations</li>
+                            </ul>
+                        </div>
+
+                        <div class="project">
+                            <div class="project-header">
+                                <h4>Retail POS System Development</h4>
+                                <i class="fas fa-chevron-right project-arrow"></i>
+                            </div>
+                            <div class="technologies">
+                                <span>.NET</span>
+                                <span>SQL Server</span>
+                                <span>Angular Framework</span>
+                                <span>Unix/Linux</span>
+                                <span>Docker</span>
+                                <span>Kubernetes</span>
+                            </div>
+                            <ul class="achievements">
+                                <li>Developed a POS system frontend using .NET Core and Angular for small and
+                                    medium-sized businesses</li>
+                                <li>Implemented a SQL Server backend to handle transactions and inventory
+                                    synchronization using Apache</li>
+                                <li>Designed an Angular and WinForms based UI for quick checkout and seamless order
+                                    processing</li>
+                                <li>Implemented payment gateway integration with Docker & Kubernetes for secured order
+                                    processing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jibe Development Services, Mumbai -->
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3>Software Engineer <span>@ Jibe Development Services, Mumbai</span></h3>
+                        <div class="period-location">
+                            <span>September 2018 - December 2019</span>
+                            <span>India - Wealth Management Domain</span>
+                        </div>
+                    </div>
+
+                    <div class="projects-container">
+                        <div class="project">
+                            <div class="project-header">
+                                <h4>Banking Wealth Management System</h4>
+                                <i class="fas fa-chevron-right project-arrow"></i>
+                            </div>
+                            <div class="technologies">
+                                <span>.NET</span>
+                                <span>SQL Server</span>
+                                <span>RESTful APIs</span>
+                                <span>Snowflake</span>
+                                <span>CI/CD</span>
+                                <span>Data Governance</span>
+                            </div>
+                            <ul class="achievements">
+                                <li>Developed a banking loan management system with .NET Core & Angular to streamline
+                                    loan applications</li>
+                                <li>Designed an Angular-based frontend user dashboard for loan tracking and repayment
+                                    schedules</li>
+                                <li>Implemented automated testing using Jest and Selenium, improving application
+                                    reliability</li>
+                                <li>Diagnosed and resolved critical production issues, minimizing downtime and ensuring
+                                    service continuity</li>
+                                <li>Implemented React based automated approval workflows and credit score calculations
+                                    for loan eligibility</li>
+                            </ul>
+                        </div>
+
+                        <div class="project">
+                            <div class="project-header">
+                                <h4>Financial Reporting and Compliance Dashboard</h4>
+                                <i class="fas fa-chevron-right project-arrow"></i>
+                            </div>
+                            <div class="technologies">
+                                <span>React</span>
+                                <span>.NET</span>
+                                <span>PHP</span>
+                                <span>WPF</span>
+                                <span>WCF</span>
+                                <span>MySQL</span>
+                                <span>RESTful APIs</span>
+                            </div>
+                            <ul class="achievements">
+                                <li>Developed a compliance reporting dashboard to help financial institutions meet
+                                    regulatory requirements</li>
+                                <li>Integrated dynamic reports with WinForms, Power BI and Angular for real-time
+                                    financial insights</li>
+                                <li>Built a .NET API layer to automate data aggregation from multiple banking systems
+                                    along with WinForms</li>
+                                <li>Implemented data validation rules to ensure compliance with financial regulations
+                                    utilizing React</li>
+                            </ul>
+                        </div>
+
+                        <div class="project">
+                            <div class="project-header">
+                                <h4>Insurance Claims Processing System</h4>
+                                <i class="fas fa-chevron-right project-arrow"></i>
+                            </div>
+                            <div class="technologies">
+                                <span>Angular</span>
+                                <span>.NET</span>
+                                <span>WinForms</span>
+                                <span>PHP</span>
+                                <span>WPF</span>
+                                <span>MySQL</span>
+                                <span>React</span>
+                                <span>Chart.js</span>
+                            </div>
+                            <ul class="achievements">
+                                <li>Developed insurance claims processing system using .NET & Angular to automate
+                                    policyholder requests</li>
+                                <li>Created RESTful APIs for seamless integration with insurance providers and
+                                    third-party services</li>
+                                <li>Designed an Angular-based customer portal for tracking claim statuses and uploading
+                                    documents</li>
+                                <li>Implemented automated fraud detection rules using SQL Server and React for dynamic
+                                    User Interface</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AppLabs Technology, Mumbai -->
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3>Software Developer <span>@ AppLabs Technology, Mumbai</span></h3>
+                        <div class="period-location">
+                            <span>May 2017 - January 2018</span>
+                            <span>India - Wealth & Insurance Domain</span>
+                        </div>
+                    </div>
+
+                    <div class="projects-container">
+                        <div class="project">
+                            <div class="project-header">
+                                <h4>Investment Portfolio Dashboard</h4>
+                                <i class="fas fa-chevron-right project-arrow"></i>
+                            </div>
+                            <div class="technologies">
+                                <span>SQL Server</span>
+                                <span>.NET</span>
+                                <span>Angular</span>
+                                <span>TypeScript</span>
+                                <span>DAST</span>
+                                <span>SAST</span>
+                                <span>Unix/Linux</span>
+                            </div>
+                            <ul class="achievements">
+                                <li>Developed an investment portfolio management system using .NET Core and Angular
+                                    Framework</li>
+                                <li>Designed real-time Angular & Chart.js visualization tools for tracking stock &
+                                    mutual fund performance</li>
+                                <li>Implemented data governance tools like DAST & SAST to ensure data security,
+                                    compliance and integrity</li>
+                                <li>Created automated financial data processing pipelines using Azure Functions and SQL
+                                    stored procedures</li>
+                                <li>Implemented data encryption and secure storage practices to protect user investments
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="project">
+                            <div class="project-header">
+                                <h4>Insurance Policy Management System</h4>
+                                <i class="fas fa-chevron-right project-arrow"></i>
+                            </div>
+                            <div class="technologies">
+                                <span>SQL Server</span>
+                                <span>.NET</span>
+                                <span>Data Governance Tools</span>
+                                <span>Angular</span>
+                                <span>Unix/Linux</span>
+                            </div>
+                            <ul class="achievements">
+                                <li>Built an insurance policy management system with .NET Core and Angular to manage
+                                    customer policies</li>
+                                <li>Developed an automated renewal and premium calculation system with SQL Server and
+                                    .NET APIs</li>
+                                <li>Created a customer-facing Angular 14 dashboard for policy updates and inquiries
+                                    utilizing TypeScript</li>
+                                <li>Configured and maintained Windows and Unix/Linux-based systems for application
+                                    deployments</li>
+                                <li>Implemented claims history tracking and fraud prevention algorithms using MVC
+                                    architecture</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-container">
+                <div class="education-item">
+                    <h3>George Brown College</h3>
+                    <p class="degree">Ontario College Graduation Certificate: Network & System Security Analysis</p>
+                    <p class="education-period">January 2021 – April 2021 | Toronto, Ontario</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>George Brown College</h3>
+                    <p class="degree">Ontario College Graduation Certificate: Wireless Networking</p>
+                    <p class="education-period">January 2020 – December 2020 | Toronto, Ontario</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>Centre for Development in Advanced Computing</h3>
+                    <p class="degree">Post Graduate Diploma in Computer and Information Technology</p>
+                    <p class="education-period">February 2018 - August 2018 | Mumbai, India</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>University of Mumbai</h3>
+                    <p class="degree">Bachelor of Engineering in Information Technology</p>
+                    <p class="education-period">June 2014 - July 2017 | Mumbai, India</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>Maharashtra State Board of Technical Education</h3>
+                    <p class="degree">Diploma of Engineering in Information Technology</p>
+                    <p class="education-period">June 2011 - June 2014 | Mumbai, India</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try
+                my best to get back to you!</p>
+            <form id="contactForm" action="https://formspree.io/f/mrbpkdag" method="POST">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <div class="error-message">Please enter your name</div>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <div class="error-message">Please enter a valid email address</div>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    <div class="error-message">Please enter your message</div>
+                </div>
+                <input type="hidden" name="_replyto" value="">
+                <input type="hidden" name="_subject" value="New message from portfolio website">
+                <input type="hidden" name="_next" value="#successMessage">
+                <button type="submit" id="submitBtn" disabled>Send Message</button>
+            </form>
+            <div class="success-message" id="successMessage">
+                <h3>Thank you for your message!</h3>
+                <p>I've received your email and will get back to you soon. A confirmation has been sent to your email
+                    address.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Resume Modal -->
+    <div class="modal" id="resumeModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h3>Get My Resume</h3>
+            <p>Please fill out the contact form to receive my resume via email.</p>
+            <button class="resume-btn" id="goToContact">
+                <i class="fas fa-envelope"></i> Go to Contact Form
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/sohamadarkar" target="_blank" aria-label="GitHub"><i
+                    class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/soham-adarkar/" target="_blank" aria-label="LinkedIn"><i
+                    class="fab fa-linkedin"></i></a>
+            <a href="https://sohamadarkar.github.io/" target="_blank" aria-label="Website"><i
+                    class="fas fa-globe"></i></a>
+            <a href="https://www.cloudskillsboost.google/public_profiles/22ad6e34-debd-4a25-a4a2-f8c65fba5f3e"
+                target="_blank" aria-label="Google Cloud Profile"><i class="fab fa-google"></i></a>
+        </div>
+        <p>© <span id="currentYear"></span> Soham Adarkar. All rights reserved.</p>
+        <p>Built with passion and Angular</p>
+    </footer>
+
+    <div class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Initialize particles.js with enhanced interactivity
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 70,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#3b82f6"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.3,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 130,
+                    "color": "#3b82f6",
+                    "opacity": 0.2,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1.5,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 120,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 150,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 3
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+
+                    // Update active nav link
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll progress indicator
+        const scrollProgress = document.getElementById('scrollProgress');
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercent = (scrollTop / scrollHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        });
+
+        // Scroll-triggered animations with IntersectionObserver
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        });
+
+        // Observe all sections and project cards
+        document.querySelectorAll('section, .project, .skills-category, .education-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Project accordion functionality
+        document.querySelectorAll('.project').forEach(project => {
+            project.addEventListener('click', () => {
+                project.classList.toggle('active');
+            });
+        });
+
+        // Resume download functionality - updated for Google Drive
+        const resumeBtn = document.getElementById('resumeBtn');
+        resumeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Open the Google Drive link in a new tab to trigger download
+            window.open('https://drive.google.com/uc?export=download&id=18EceqEozE7EUKnZcThhqD_T-YkYLJn3u', '_blank');
+        });
+
+        // Form input focus effects
+        document.querySelectorAll('input, textarea').forEach(input => {
+            input.addEventListener('focus', function () {
+                this.parentElement.classList.add('focused');
+            });
+
+            input.addEventListener('blur', function () {
+                if (this.value === '') {
+                    this.parentElement.classList.remove('focused');
+                }
+            });
+        });
+
+        // Contact form validation and submission
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+        const submitBtn = document.getElementById('submitBtn');
+
+        // Form validation function
+        const validateForm = () => {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            // Check if all fields are valid
+            const isNameValid = name.length > 0;
+            const isEmailValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
+            const isMessageValid = message.length > 0;
+
+            // Enable/disable submit button based on validation
+            submitBtn.disabled = !(isNameValid && isEmailValid && isMessageValid);
+
+            return isNameValid && isEmailValid && isMessageValid;
+        };
+
+        // Real-time validation
+        contactForm.addEventListener('input', () => {
+            validateForm();
+
+            // Update hidden _replyto field with current email
+            const email = document.getElementById('email').value.trim();
+            document.querySelector('input[name="_replyto"]').value = email;
+        });
+
+        // Form submission
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Reset form validation
+            const formGroups = document.querySelectorAll('.form-group');
+            formGroups.forEach(group => group.classList.remove('invalid'));
+
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            // Validate form
+            let isValid = true;
+
+            if (!name) {
+                document.querySelector('#name').parentElement.classList.add('invalid');
+                isValid = false;
+            }
+
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                document.querySelector('#email').parentElement.classList.add('invalid');
+                isValid = false;
+            }
+
+            if (!message) {
+                document.querySelector('#message').parentElement.classList.add('invalid');
+                isValid = false;
+            }
+
+            if (!isValid) {
+                return;
+            }
+
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            try {
+                // Update hidden fields with current values
+                document.querySelector('input[name="_replyto"]').value = email;
+                document.querySelector('input[name="_subject"]').value = `New message from ${name} via portfolio website`;
+
+                // Submit the form to Formspree
+                const formData = new FormData(contactForm);
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Show success message
+                    contactForm.reset();
+                    successMessage.classList.add('show');
+
+                    // Scroll to success message
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    // Send thank you email with resume attachment
+                    await fetch('https://formspree.io/f/mrbpkdag', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            _replyto: email,
+                            _subject: 'Thank you for your message - Soham Adarkar Resume Attached',
+                            message: `Hi ${name},\n\nThank you for reaching out through my portfolio website. I've attached my resume as requested.\n\nI've received your message and will get back to you soon.\n\nBest regards,\nSoham Adarkar`,
+                            attachment: {
+                                url: 'Soham_Adarkar_Software_Developer.pdf',
+                                name: 'Soham_Adarkar_Resume.pdf'
+                            }
+                        }),
+                    });
+                } else {
+                    throw new Error('Failed to send message');
+                }
+            } catch (error) {
+                // Show error message
+                const errorAlert = document.createElement('div');
+                errorAlert.style.position = 'fixed';
+                errorAlert.style.bottom = '20px';
+                errorAlert.style.left = '50%';
+                errorAlert.style.transform = 'translateX(-50%)';
+                errorAlert.style.backgroundColor = '#fee2e2';
+                errorAlert.style.color = '#b91c1c';
+                errorAlert.style.padding = '12px 20px';
+                errorAlert.style.borderRadius = '8px';
+                errorAlert.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+                errorAlert.style.zIndex = '1000';
+                errorAlert.style.animation = 'popIn 0.3s ease-out';
+                errorAlert.textContent = 'Error sending message. Please try again later.';
+
+                document.body.appendChild(errorAlert);
+
+                // Remove error message after 5 seconds
+                setTimeout(() => {
+                    errorAlert.style.animation = 'fadeIn 0.3s ease-out reverse';
+                    setTimeout(() => errorAlert.remove(), 300);
+                }, 5000);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            }
+        });
+
+        // Initialize form validation
+        validateForm();
+
+        // Dark mode toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+        // Check for saved theme preference or use the system preference
+        const currentTheme = localStorage.getItem('theme') ||
+            (prefersDarkScheme.matches ? 'dark' : 'light');
+        document.body.setAttribute('data-theme', currentTheme);
+
+        // Update the icon based on current theme
+        updateThemeIcon(currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            let theme = document.body.getAttribute('data-theme');
+            theme = theme === 'dark' ? 'light' : 'dark';
+            document.body.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            updateThemeIcon(theme);
+        });
+
+        function updateThemeIcon(theme) {
+            const icon = themeToggle.querySelector('i');
+            icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
+
+        // Set active nav link based on scroll position
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Easter egg - press S+A to trigger animation
+        let keysPressed = {};
+        document.addEventListener('keydown', (e) => {
+            keysPressed[e.key] = true;
+
+            if (keysPressed['s'] && keysPressed['a']) {
+                // Trigger confetti effect
+                const colors = ['#3b82f6', '#2563eb', '#1d4ed8', '#60a5fa'];
+                for (let i = 0; i < 50; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.style.position = 'fixed';
+                    confetti.style.width = '10px';
+                    confetti.style.height = '10px';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.borderRadius = '50%';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.top = '-10px';
+                    confetti.style.zIndex = '1000';
+                    confetti.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+                    document.body.appendChild(confetti);
+
+                    const animation = confetti.animate([
+                        { top: '-10px', opacity: 1 },
+                        { top: '100vh', opacity: 0 }
+                    ], {
+                        duration: Math.random() * 3000 + 2000,
+                        easing: 'cubic-bezier(0.1, 0.8, 0.3, 1)'
+                    });
+
+                    animation.onfinish = () => confetti.remove();
+                }
+
+                // Reset keys
+                keysPressed = {};
+            }
+        });
+
+        document.addEventListener('keyup', (e) => {
+            delete keysPressed[e.key];
+        });
+
+        // Google Analytics (replace GA_MEASUREMENT_ID with your actual ID)
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</body>
+
+</html>
